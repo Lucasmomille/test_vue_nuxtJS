@@ -1,22 +1,25 @@
 <template>
-  <Layout>
-    <div class="container w-9/12 flex flex-wrap text-black">
-      <div v-for="van in vans" :key="van.id" class="w-3/12">
-        <p>{{ van.title }}</p>
-      </div>
-    </div>
-  </Layout>
+  <div class="mx-auto w-11/12 flex flex-wrap justify-between text-black">
+    <Article
+      v-for="(van, index) in vans"
+      :key="van.id"
+      :index="index"
+      :title="van.title"
+      :location="van.vehicle_location_city"
+      :price="van.starting_price"
+    >
+    </Article>
+  </div>
 </template>
 
 <script>
 /* eslint-disable */
 import Article from '@/components/Article'
-import Layout from '@/components/Layout'
+
 import axios from 'axios'
 export default {
   components: {
     Article,
-    Layout,
   },
   async asyncData() {
     const { data } = await axios.get(
@@ -39,6 +42,5 @@ export default {
         console.log(error)
       }) */
   },
-  data: {},
 }
 </script>

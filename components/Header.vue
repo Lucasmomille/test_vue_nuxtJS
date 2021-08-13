@@ -1,5 +1,5 @@
 <template>
-  <header class="w-full p-4 border-2 rounded-md border-green-300">
+  <header class="w-full p-4 border-2 rounded-md border-green-300 mb-12">
     <LogoYescapa />
   </header>
 </template>
