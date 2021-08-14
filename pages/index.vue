@@ -1,14 +1,22 @@
 <template>
-  <div class="mx-auto w-11/12 flex flex-wrap justify-between text-black">
-    <Article
-      v-for="(van, index) in vans"
-      :key="van.id"
-      :index="index"
-      :title="van.title"
-      :location="van.vehicle_location_city"
-      :price="van.starting_price"
-    >
-    </Article>
+  <div class="flex mx-auto w-11/12 justify-between">
+    <div class="w-2/12">filtres</div>
+    <div class="w-10/12 flex flex-wrap justify-between text-black">
+      <Article
+        v-for="(van, index) in vans"
+        :id="van.id"
+        :key="van.id"
+        :index="index"
+        :title="van.title"
+        :location="van.vehicle_location_city"
+        :price="van.starting_price"
+        :src="van.pictures[0].url"
+        :places="van.vehicle_seats"
+        :beds="van.vehicle_beds"
+        :rate="van.review_count"
+      >
+      </Article>
+    </div>
   </div>
 </template>
 
