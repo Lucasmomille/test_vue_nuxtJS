@@ -1,6 +1,6 @@
 <template>
   <NuxtLink
-    :to="'/' + id"
+    :to="'/' + vehicule.id"
     class="
       rounded-md
       overflow-hidden
@@ -13,18 +13,22 @@
     "
   >
     <article class="w-full">
-      <img :src="src" alt="photo véhicule" class="object-cover h-52 w-full" />
+      <img
+        :src="vehicule.pictures[0].url"
+        alt="photo véhicule"
+        class="object-cover h-52 w-full"
+      />
       <div class="flex flex-col p-2">
         <div class="flex justify-between">
-          <h2 class="">{{ title }}</h2>
-          <p>{{ price }}€/j</p>
+          <h2 class="">{{ vehicule.title }}</h2>
+          <p>{{ vehicule.starting_price }}€/j</p>
         </div>
-        <p>{{ location }}</p>
+        <p>{{ vehicule.vehicule_location_city }}</p>
         <p>
-          <span> {{ places }} places</span>
-          <span> {{ beds }} couchages</span>
+          <span> {{ vehicule.vehicule_seats }} places</span>
+          <span> {{ vehicule.vehicule_beds }} couchages</span>
           <span class="flex items-center">
-            {{ rate }} avis
+            {{ vehicule.review_count }} avis
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-6 w-6 fill-current text-green-500"
@@ -50,36 +54,8 @@
 <script>
 export default {
   props: {
-    title: {
-      type: String,
-      required: true,
-    },
-    id: {
-      type: Number,
-      required: true,
-    },
-    src: {
-      type: String,
-      required: true,
-    },
-    price: {
-      type: Number,
-      required: true,
-    },
-    location: {
-      type: String,
-      required: true,
-    },
-    places: {
-      type: Number,
-      required: true,
-    },
-    beds: {
-      type: Number,
-      required: true,
-    },
-    rate: {
-      type: Number,
+    vehicule: {
+      type: Object,
       required: true,
     },
   },
