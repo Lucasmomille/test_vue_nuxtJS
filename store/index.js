@@ -13,8 +13,8 @@ export const getters = {
 }
 
 export const actions = {
-    getVehicules({ commit }) {
-        axios.get(
+    async getVehicules({ commit }) {
+        await axios.get(
             'https://gitlab.com/api/v4/snippets/2095016/raw'
         ).then(response => {
             let data = response.data.results;

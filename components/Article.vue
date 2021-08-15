@@ -23,10 +23,10 @@
           <h2 class="">{{ vehicule.title }}</h2>
           <p>{{ vehicule.starting_price }}€/j</p>
         </div>
-        <p>{{ vehicule.vehicule_location_city }}</p>
+        <p>{{ vehicule.vehicle_location_city }}</p>
         <p>
-          <span> {{ vehicule.vehicule_seats }} places</span>
-          <span> {{ vehicule.vehicule_beds }} couchages</span>
+          <span> {{ vehicule.vehicle_seats }} places</span>
+          <span> {{ vehicule.vehicle_beds }} couchages</span>
           <span class="flex items-center">
             {{ vehicule.review_count }} avis
             <svg

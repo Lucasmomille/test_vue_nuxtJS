@@ -1,5 +1,5 @@
 <template>
-  <header class="w-full p-4 border-2 rounded-md border-green-300 mb-12">
+  <header class="w-full p-4 border-b-2 border-green-300 mb-12">
     <nuxt-link to="/">
       <LogoYescapa />
     </nuxt-link>
