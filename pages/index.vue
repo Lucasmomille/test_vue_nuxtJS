@@ -3,10 +3,10 @@
     <div class="w-2/12">filtres</div>
     <div class="w-10/12 flex flex-wrap justify-between text-black">
       <Article
-        v-for="(van, index) in vans"
-        :key="van.id"
+        v-for="(vehicule, index) in vehicules"
+        :key="vehicule.id"
         :index="index"
-        :vehicule="van"
+        :vehicule="vehicule"
       >
       </Article>
     </div>
@@ -16,32 +16,18 @@
 <script>
 /* eslint-disable */
 import Article from '@/components/Article'
+import { mapState } from 'vuex'
 
-import axios from 'axios'
 export default {
   components: {
     Article,
   },
-  async asyncData() {
-    const { data } = await axios.get(
-      'https://gitlab.com/api/v4/snippets/2095016/raw'
-    )
 
-    console.log(data.results[0])
-
-    return {
-      vans: data.results,
-    }
-
-    /* .then((res) => {
-        console.log(JSON.parse(res.data.results))
-        return {
-          vans: res.data.results,
-        }
-      })
-      .catch((error) => {
-        console.log(error)
-      }) */
+  computed: {
+    ...mapState(['vehicules']),
+  },
+  mounted() {
+    this.$store.dispatch('getVehicules')
   },
 }
 </script>

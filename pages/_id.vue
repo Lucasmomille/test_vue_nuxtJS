@@ -6,7 +6,7 @@
     <div class="flex flex-col">
       <div>
         <p>A partir de €/jours</p>
-        <p></p>
+        <p>{{ vehicule }}</p>
       </div>
       <div>Reassurance</div>
     </div>
@@ -14,13 +14,14 @@
 </template>
 
 <script>
-// get params and filter the json with id
+/* eslint-disable */
+
 export default {
-  asyncData({ params }) {
-    // called every time before loading the component
-    return {
-      id: params.id,
-    }
+  computed: {
+    vehicule() {
+      return this.$store.getters.getVehiculeById(this.$route.params.id)
+    },
   },
 }
 </script>
+
