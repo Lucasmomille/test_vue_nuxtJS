@@ -14,9 +14,10 @@
   >
     <article class="w-full">
       <img
-        :src="vehicule.pictures[0].url"
+        :src="vehicule.pictures[`${imageIndex}`].url"
         alt="photo véhicule"
         class="object-cover h-52 w-full"
+        @error="displayFallbackImage"
       />
       <div class="flex flex-col p-2">
         <div class="flex justify-between">
@@ -57,6 +58,17 @@ export default {
     vehicule: {
       type: Object,
       required: true,
+    },
+  },
+  data: () => {
+    return {
+      imageIndex: 0,
+    }
+  },
+
+  methods: {
+    displayFallbackImage() {
+      this.imageIndex++
     },
   },
 }
