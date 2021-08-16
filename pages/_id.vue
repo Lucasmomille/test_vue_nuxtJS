@@ -25,28 +25,13 @@
       <div class="flex flex-col w-3/12">
         <div class="mb-8 border border-gray-300 p-2 rounded-md">
           <p>A partir de {{ vehicule.starting_price }} €/jours</p>
-          <ModalCalendar />
-          <form action="get">
-            <div role="group">
-              <label for="date-from"></label>
-              <input
-                type="text"
-                autocomplete="off"
-                aria-label="Choississez une date de depart"
-              />
-            </div>
-            <div role="group">
-              <label for="date-to"></label>
-              <input
-                type="text"
-                autocomplete="off"
-                aria-label="Choississez une date de retour"
-              />
-            </div>
-            <button class="rounded-md p-2 bg-green-300">
-              Confirmer la location
-            </button>
-          </form>
+          <Calendar />
+          <button
+            class="rounded-md p-2 mt-8 bg-green-300 text-white"
+            @submit.prevent
+          >
+            Confirmer la location
+          </button>
         </div>
         <div class="border border-gray-300 p-2 rounded-md">Reassurance</div>
       </div>
@@ -62,14 +47,14 @@
 /* eslint-disable */
 import IconId from '@/components/IconId'
 import PageNotFound from '@/components/PageNotFound'
-import ModalCalendar from '@/components/ModalCalendar'
+import Calendar from '@/components/Calendar'
 import { mapState } from 'vuex'
 
 export default {
   components: {
     IconId,
     PageNotFound,
-    ModalCalendar,
+    Calendar,
   },
   computed: {
     vehicule() {
