@@ -13,15 +13,22 @@
             alt="photo propriétaire"
             class="lg:w-32 lg:h-32 w-12 h-12 object-cover mr-6"
           />
-          <div class="flex flex-col relative">
+          <div class="flex flex-col relative w-7/12">
             <h2 class="text-lg lg:mb-4 mb-1">{{ vehicule.title }}</h2>
             <p>{{ vehicule.vehicle_location_city }}</p>
             <span
               v-if="hover"
-              class="bg-green-400 rounded-md w-2/12 text-center text-white ml-9"
+              class="
+                bg-green-400
+                rounded-md
+                w-2/12
+                text-center text-white
+                ml-9
+                mt-1
+              "
               >{{ vehicule.review_average }}</span
             >
-            <div class="lg:absolute bottom-0 flex lg:mt-0 mt-2">
+            <div class="lg:absolute bottom-0 flex lg:mt-0 mt-2 w-full">
               <div
                 class="flex mr-4 cursor-pointer"
                 @mouseover="hover = true"
@@ -29,7 +36,7 @@
               >
                 <ReviewStars v-for="index in 5" :key="index" />
               </div>
-              <span>{{ vehicule.review_count }} avis</span>
+              <span class="w-4/12">{{ vehicule.review_count }} avis</span>
             </div>
           </div>
         </div>
