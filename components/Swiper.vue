@@ -1,15 +1,15 @@
 <template>
-  <div v-swiper:mySwiper="swiperOption">
+  <div v-swiper:mySwiper="swiperOption" class="mb-8 rounded-md">
     <div class="swiper-wrapper">
       <div
-        v-for="picture in vehicule.pictures"
+        v-for="picture in pictures"
         :key="picture.id"
-        class="swiper-slide"
+        class="swiper-slide rounded-md"
       >
         <img
-          class="h-80 w-full object-cover"
+          class="lg:h-96 object-cover w-full h-80 rounded-md text-center"
           :src="picture.url"
-          alt="picture"
+          alt="photo du véhicule, si vide passez à la slide suivante"
         />
       </div>
     </div>
@@ -22,12 +22,12 @@
 <script>
 import { mapState } from 'vuex'
 export default {
-  /* props: {
+  props: {
     pictures: {
       type: Array,
       required: true,
     },
-  }, */
+  },
   data() {
     return {
       swiperOption: {
@@ -51,9 +51,9 @@ export default {
     vehicule() {
       return this.$store.getters.getVehiculeById(this.$route.params.id)
     },
-    pictures() {
+    /* pictures() {
       return this.$store.getters.getPictureOfVehicle(this.$route.params.id)
-    },
+    }, */
     ...mapState(['vehicules']),
   },
 

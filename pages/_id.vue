@@ -4,13 +4,8 @@
       v-if="vehicule"
       class="flex flex-col lg:flex-row lg:justify-center w-11/12 mx-auto"
     >
-      <Swiper />
-      <div class="flex flex-col lg:w-9/12 w-full lg:mx-8">
-        <img
-          :src="vehicule.pictures[0].url"
-          alt="photo du vehicule"
-          class="lg:w-11/12 lg:h-96 object-cover w-full h-80 rounded-md mb-8"
-        />
+      <div class="flex flex-col lg:w-7/12 w-full lg:mx-8">
+        <Swiper :pictures="vehicule.pictures" />
 
         <div class="flex w-full">
           <img
