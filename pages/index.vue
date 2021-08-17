@@ -1,6 +1,18 @@
 <template>
-  <div class="flex mx-8 justify-between">
-    <div class="w-2/12 p-2 border border-gray-200 rounded-md mr-4">
+  <div class="flex lg:flex-row flex-col mx-8 justify-between">
+    <div
+      class="
+        w-full
+        lg:w-2/12
+        p-2
+        border border-gray-200
+        rounded-md
+        mr-4
+        flex flex-col
+        lg:h-80
+        h-auto
+      "
+    >
       <p class="w-full text-center border-b border-green-200 pb-1 mb-4">
         Filtres
       </p>
@@ -22,7 +34,19 @@
         class="bg-red-200"
       />
     </div>
-    <div class="w-10/12 grid grid-cols-3 gap-4 text-black">
+    <div
+      class="
+        w-full
+        lg:w-10/12
+        grid
+        lg:grid-cols-3
+        grid-cols-1
+        gap-4
+        lg:mt-0
+        mt-6
+        text-black
+      "
+    >
       <Article
         v-for="(vehicule, index) in filteredVehicles"
         :key="vehicule.id"

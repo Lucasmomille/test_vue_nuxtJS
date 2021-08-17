@@ -1,8 +1,7 @@
 <template>
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="389.949"
-    height="130.475"
+    class="w-full"
     viewBox="0 0 389.949 130.475"
   >
     <linearGradient

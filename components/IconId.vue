@@ -1,5 +1,17 @@
 <template>
-  <div class="mt-12 flex justify-between w-full">
+  <div
+    class="
+      mt-12
+      flex
+      justify-between
+      w-full
+      overflow-scroll
+      md:overflow-auto
+      pb-4
+      space-x-4
+      md:space-x-0
+    "
+  >
     <div class="2/12 text-center">
       <img
         src="~assets/images/seat-belt.svg"
