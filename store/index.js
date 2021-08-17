@@ -9,7 +9,16 @@ export const getters = {
     allVehicules: (state) => state.vehicules,
     getVehiculeById: (state) => (id) => {
         return state.vehicules.find(vehicule => vehicule.id == id)
+    },
+
+    filteredVehiclesForLocation: (state) => {
+        return state.vehicules.filter((vehicule) => {
+            return vehicule.vehicle_location_city
+                .toLowerCase()
+                .match(this.searchLocation.toLowerCase())
+        })
     }
+
 }
 
 export const actions = {

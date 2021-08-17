@@ -1,16 +1,7 @@
 <template>
   <NuxtLink
     :to="'/' + vehicule.id"
-    class="
-      rounded-md
-      overflow-hidden
-      w-4/12
-      mb-6
-      border border-gray-300
-      shadow-md
-      transform
-      scale-x-95
-    "
+    class="rounded-md overflow-hidden mb-6 border border-gray-300 shadow-md"
   >
     <article class="w-full">
       <img
@@ -21,7 +12,7 @@
       />
       <div class="flex flex-col p-2">
         <div class="flex justify-between">
-          <h2 class="">{{ vehicule.title }}</h2>
+          <h2 class="font-bold">{{ vehicule.title }}</h2>
           <p>{{ vehicule.starting_price }}€/j</p>
         </div>
         <p>{{ vehicule.vehicle_location_city }}</p>

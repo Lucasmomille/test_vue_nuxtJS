@@ -56,6 +56,7 @@ export default {
     PageNotFound,
     Calendar,
   },
+
   computed: {
     vehicule() {
       return this.$store.getters.getVehiculeById(this.$route.params.id)
