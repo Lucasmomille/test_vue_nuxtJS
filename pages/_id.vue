@@ -17,17 +17,23 @@
           <div class="flex flex-col relative">
             <h2 class="text-lg mb-4">{{ vehicule.title }}</h2>
             <p>{{ vehicule.vehicle_location_city }}</p>
-            <p class="absolute bottom-0">{{ vehicule.review_count }} avis</p>
+            <div class="absolute bottom-0 flex">
+              <div class="flex mr-4">
+                <ReviewStars v-for="index in 5" :key="index" />
+              </div>
+
+              <span>{{ vehicule.review_count }} avis</span>
+            </div>
           </div>
         </div>
         <IconId :vehicule="vehicule" />
       </div>
       <div class="flex flex-col w-3/12">
-        <div class="mb-8 border border-gray-300 p-2 rounded-md">
+        <div class="mb-8 border border-gray-300 p-2 rounded-md flex flex-col">
           <p>A partir de {{ vehicule.starting_price }} €/jours</p>
           <Calendar />
           <button
-            class="rounded-md p-2 mt-8 bg-green-300 text-white"
+            class="rounded-md p-2 mt-8 bg-green-300 text-white self-center"
             @submit.prevent
           >
             Confirmer la location
@@ -48,6 +54,7 @@
 import IconId from '@/components/IconId'
 import PageNotFound from '@/components/PageNotFound'
 import Calendar from '@/components/Calendar'
+import ReviewStars from '@/components/ReviewStars'
 import { mapState } from 'vuex'
 
 export default {
@@ -55,6 +62,7 @@ export default {
     IconId,
     PageNotFound,
     Calendar,
+    ReviewStars,
   },
 
   computed: {
