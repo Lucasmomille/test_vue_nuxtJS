@@ -4,6 +4,7 @@
       v-if="vehicule"
       class="flex flex-col lg:flex-row lg:justify-center w-11/12 mx-auto"
     >
+      <Swiper />
       <div class="flex flex-col lg:w-9/12 w-full lg:mx-8">
         <img
           :src="vehicule.pictures[0].url"
@@ -76,6 +77,7 @@ import IconId from '@/components/IconId'
 import PageNotFound from '@/components/PageNotFound'
 import Calendar from '@/components/Calendar'
 import ReviewStars from '@/components/ReviewStars'
+import Swiper from '@/components/Swiper'
 import { mapState } from 'vuex'
 
 export default {
@@ -89,6 +91,7 @@ export default {
     PageNotFound,
     Calendar,
     ReviewStars,
+    Swiper,
   },
 
   computed: {
