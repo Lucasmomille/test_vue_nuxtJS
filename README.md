@@ -1,4 +1,6 @@
-# Exercice pour yescapa
+# Exercice pour entretien
+
+Il était demandé de se connecter à un fichier json de l'entreprise mis en ligne et de l'exploiter sur deux vues.
 
 ## Build Setup
 
